@@ -109,11 +109,19 @@ function writePassword() {
     // create array to hold password
     var letter = [];
     // loop gen for password length
-    for (i = 0; i <= (2 * passLength) / 6 - 1; i++) {
-      // add a random letter/specChar to array
-      letter.push(passValuesLower[randomNumber(0, passValuesLower.length)]);
-      letter.push(passValuesUpper[randomNumber(0, passValuesUpper.length)]);
-      letter.push(passValuesSpec[randomNumber(0, passValuesSpec.length)]);
+    for (i = 0; i <= passLength - 1; i++) {
+      // add a random lowercase letter to array
+      if (randomNumber(1, 10) <= 4 && letter.length < passLength) {
+        letter.push(
+          passValuesLower[randomNumber(0, passValuesLower.length - 1)]
+        );
+      } else if (randomNumber(1, 10) <= 7 && letter.length < passLength) {
+        letter.push(
+          passValuesUpper[randomNumber(0, passValuesUpper.length - 1)]
+        );
+      } else if (letter.length < passLength) {
+        letter.push(passValuesSpec[randomNumber(0, passValuesSpec.length - 1)]);
+      }
       console.log(letter);
     }
     // join password array into string the return string
