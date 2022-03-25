@@ -1,6 +1,11 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var criteriaForm = document.getElementById("dialog");
+var formItems = document.querySelector("input");
+var confirmBtn = document.querySelector("confirmBtn");
+var lengthInput = document.getElementById("lengthInput").value;
 
+// RANDOM NUMBER GENERATOR
 var randomNumber = function (min, max) {
   var value = Math.floor(Math.random() * (max - min + 1) + min);
   return value;
@@ -101,11 +106,18 @@ var passValuesSpec = [
 
 // Write password to the #password input
 function writePassword() {
-  // debugger;
+  debugger;
 
-  // prompt for password legnth
-
-  //prompt for character type
+  // prompt for password criteria
+  if (typeof criteriaForm.showModal === "function") {
+    criteriaForm.showModal();
+  } else {
+    alert("modal broken");
+  }
+  // pull prompt values
+  confirmBtn.addEventListener("click", function () {
+    passLength = document.getElementById(lengthInput).value;
+  });
 
   // generate a password
   var generatePassword = function () {
