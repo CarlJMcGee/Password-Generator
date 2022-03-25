@@ -98,12 +98,15 @@ var passValuesSpec = [
   "}",
   "~",
 ];
-// password legnth
-var passLength = parseInt("10");
 
 // Write password to the #password input
 function writePassword() {
   // debugger;
+
+  // prompt for password legnth
+
+  //prompt for character type
+
   // generate a password
   var generatePassword = function () {
     // create array to hold password
