@@ -104,6 +104,8 @@ var passValuesSpec = [
   "~",
 ];
 
+var passVauesNum = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+
 // Write password to the #password input
 function writePassword() {
   // debugger;
@@ -121,7 +123,10 @@ function writePassword() {
     passLowChecked = document.getElementById("lwcs").checked;
     passUpChecked = document.getElementById("upcs").checked;
     passSpecChecked = document.getElementById("spch").checked;
-    console.log(passLowChecked + passUpChecked + passSpecChecked);
+    passNumChecked = document.getElementById("num").checked;
+    console.log(
+      passLowChecked + passUpChecked + passSpecChecked + passNumChecked
+    );
     // check if passLength meets requirments
     if (passLength < 8 || passLength > 128) {
       // if length = <8 or >128, alert user and restart script
@@ -135,6 +140,7 @@ function writePassword() {
     if (
       passLowChecked === false &&
       passUpChecked === false &&
+      passNumChecked === false &&
       passSpecChecked === false
     ) {
       window.alert(
@@ -165,6 +171,12 @@ function writePassword() {
             letter.push(
               passValuesUpper[randomNumber(0, passValuesUpper.length - 1)]
             );
+          }
+        }
+        // add random number
+        if (passNumChecked) {
+          if (letter.length < passLength) {
+            letter.push(passVauesNum[randomNumber(0, passVauesNum.length - 1)]);
           }
         }
         // add random special character to array
