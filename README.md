@@ -19,3 +19,5 @@ If a password length less than 8 or greater than 128 is entered, user will be al
 If no special charcters are selected, user is alerted they must select at least one character type and asked to try again.
 
 ## [Deployed Site](https://carljmcgee.github.io/Password-Generator/)
+
+![screenshot](./Assets/Screenshot%202022-03-28%20132057.png)
