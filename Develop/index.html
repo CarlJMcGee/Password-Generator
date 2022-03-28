@@ -16,6 +16,32 @@
         <div class="card-header">
           <h2>Generate a Password</h2>
         </div>
+        <div id="form">
+          <dialog id="dialog">
+            <form autocomplete="off">
+              <p>
+                <label for="length">Enter Desired Password Length</label>
+                <input type="text" placeholder="8-128" id="lengthInput" />
+              </p>
+              <br />
+              What Character Types Would You Like?
+              <p>
+                <input type="checkbox" name="lowerCase" id="lwcs" />
+                <label for="lwcs">Lowercase</label>
+              </p>
+              <p>
+                <input type="checkbox" name="upperCase" id="upcs" />
+                <label for="upcs">Uppercase</label>
+              </p>
+              <p>
+                <input type="checkbox" name="specChar" id="spch" />
+                <label for="spch">Special Characters</label>
+              </p>
+              <button id="confirmBtn">Generate!</button>
+              <button id="cancelBtn">Cancel</button>
+            </form>
+          </dialog>
+        </div>
         <div class="card-body">
           <textarea
             readonly
