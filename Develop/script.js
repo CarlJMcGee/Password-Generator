@@ -140,6 +140,7 @@ function writePassword() {
       window.alert(
         "You must have at least one character type checked. Try again and select a charcter type."
       );
+      writePassword();
     }
     // prevent page from reloading on submit and close dialog
     event.preventDefault();
@@ -152,7 +153,7 @@ function writePassword() {
       for (i = 0; i <= passLength - 1; i++) {
         if (passLowChecked) {
           // add a random lowercase letter to array
-          if (randomNumber(1, passLength) <= 4 && letter.length < passLength) {
+          if (letter.length < passLength) {
             letter.push(
               passValuesLower[randomNumber(0, passValuesLower.length - 1)]
             );
@@ -160,7 +161,7 @@ function writePassword() {
         }
         // add random uppercase letter to array
         if (passUpChecked) {
-          if (randomNumber(1, passLength) <= 7 && letter.length < passLength) {
+          if (letter.length < passLength) {
             letter.push(
               passValuesUpper[randomNumber(0, passValuesUpper.length - 1)]
             );
